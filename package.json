@@ -1,0 +1,48 @@
+{
+  "name": "bnp-e-sports-contact",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "npx webpack-dev-server",
+    "build": "npx webpack",
+    "watch": "npx webpack --watch"
+  },
+  "browserslist": [
+    "last 2 version",
+    "iOS >= 8.1",
+    "Android >= 4.4"
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.21.8",
+    "@babel/preset-env": "^7.21.5",
+    "@tweenjs/tween.js": "^20.0.3",
+    "autoprefixer": "^10.4.14",
+    "babel-loader": "^9.1.2",
+    "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^6.7.4",
+    "css-minimizer-webpack-plugin": "^5.0.0",
+    "cssnano": "^6.0.1",
+    "html-loader": "^4.2.0",
+    "html-webpack-plugin": "^5.5.1",
+    "mini-css-extract-plugin": "^2.7.6",
+    "postcss": "^8.4.23",
+    "postcss-loader": "^7.3.0",
+    "sass": "^1.62.1",
+    "sass-loader": "^13.3.0",
+    "style-loader": "^3.3.3",
+    "template-ejs-loader": "^0.9.4",
+    "terser-webpack-plugin": "^5.3.9",
+    "three-css3drenderer": "^1.0.1",
+    "three-trackballcontrols": "^0.9.0",
+    "webpack": "^5.83.1",
+    "webpack-cli": "^5.1.1",
+    "webpack-dev-server": "^4.15.0",
+    "webpack-watched-glob-entries-plugin": "^2.2.6"
+  },
+  "dependencies": {
+    "core-js": "^3.30.2",
+    "ejs": "^3.1.9",
+    "three": "^0.152.2"
+  }
+}

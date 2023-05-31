@@ -1,0 +1,61 @@
+@import url(_reset.scss);
+$font-color: #19DC88;
+$font-shadow: 0 0 8px $font-color;
+
+html {
+    background-color: white;
+    color: $font-color;
+    text-shadow: $font-shadow;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+}
+#myCanvas {
+  position: fixed;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+}
+.container {
+    position: relative;
+    margin: 0 auto;
+    max-width: 80vw;
+}
+#cont-scene{
+    background-color: transparent;
+}
+.bg-img {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: auto;
+    width: 100vw;
+    z-index: -1;
+}
+
+section {
+    height: 100vh;
+}
+*{
+    scrollbar-width: none;
+    &::-webkit-scrollbar{
+        display:none;
+      }
+}
+h1 {
+    font-size: clamp(15vw, 20vw, 25vw);
+    font-weight: 900;
+}
+
+h2 {
+    font-size: 4.2rem;
+}
+
+.text-center {
+    text-align: center;
+}
