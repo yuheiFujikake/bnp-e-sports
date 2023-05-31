@@ -51,7 +51,7 @@ module.exports = {
   devtool: "source-map",
   entry: "./src/assets/js/index.js",
   output: {
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "docs"),
     filename: "assets/js/index.js",
     assetModuleFilename: "assets/images/[name][ext]",
   },
