@@ -1,10 +1,9 @@
-import "../scss/style.scss";
 import * as THREE from "three";
 import {
   CSS3DRenderer,
   CSS3DObject,
 } from "three/addons/renderers/CSS3DRenderer.js";
-import SMOKE_TEXTURE from "~/assets/images/webgl/Smoke-Element.png";
+import SMOKE_TEXTURE from "Images/webgl/Smoke-Element.png";
 
 window.addEventListener("load", () => {
   new Smoke();
@@ -74,6 +73,18 @@ class Smoke {
     });
     window.onmousewheel = (event) => {
       this.scroll = event.wheelDelta / 3;
+      this.scroll += this.cameraPosiZ;
+    };
+
+    window.ontouchstart = (event) => {
+      this.prevTouchPosY = event.touches[0].pageY;
+    };
+
+    window.ontouchmove = (event) => {
+      this.currentTouchPosY = event.touches[0].pageY;
+      this.offset = this.prevTouchPosY - this.currentTouchPosY;
+      this.prevTouchPosY = this.currentTouchPosY;
+      this.scroll = this.offset * 5;
       this.scroll += this.cameraPosiZ;
     };
   }
