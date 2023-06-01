@@ -1,0 +1,33 @@
+//- External variables
+block variables
+
+doctype html
+html(lang='ja' dir='ltr')
+  head
+    //- Meta
+    meta(charset='utf-8')
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1')
+    link(rel="stylesheet" href=require("Styles/style.scss"))
+
+    //- Page title
+    title= title
+
+    //- Page styles
+    block style
+
+    //- Additional head block to add here page specifically assets
+    block head
+
+  body
+    //- Main header
+    block header
+
+    //- Main content
+    block content
+
+    //- Main footer
+    block footer
+
+    //- Page scripts
+    block script
