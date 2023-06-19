@@ -1,0 +1,69 @@
+@use "../../../global/global.scss" as global;
+
+.topic {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &_inner {
+    position: relative;
+    z-index: 5;
+    margin: auto;
+    max-width: 1240px;
+    max-height: 650px;
+    height: 100vh;
+    width: 100%;
+    background: rgba($color: #000000, $alpha: 0.9);
+    box-shadow: 0 0 5rem global.$neonColor;
+    border: 1px solid global.$normalColor;
+  }
+
+  &_ttl {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: 16px;
+    text-align: center;
+    font-size: global.$fontSizeLarge;
+    font-weight: bold;
+    line-height: 1.5;
+    text-shadow: 0 0 0.5rem global.$neonColor;
+    &::after {
+      content: "";
+      display: block;
+      height: 1px;
+      width: 50px;
+      border: 1px solid global.$normalColor;
+      box-shadow: 0 0 5rem global.$neonColor;
+    }
+  }
+  &_list {
+    display: flex;
+    justify-content: space-around;
+    width: calc(100% - 120px);
+    margin: 48px auto 0;
+  }
+  &_item {
+    width: calc(100% / 3);
+  }
+  &_img {
+    width: 100%;
+    height: auto;
+  }
+  &_date {
+    margin-top: 8px;
+    font-size: global.$fontSizeSmall;
+    letter-spacing: 0.05em;
+    text-shadow: 0 0 0.5rem global.$neonColor;
+  }
+  &_caption {
+    margin-top: 8px;
+    font-size: global.$fontSizeNormal;
+    font-weight: normal;
+    line-height: 1.5;
+    letter-spacing: 0.05em;
+    text-shadow: 0 0 0.5rem global.$neonColor;
+  }
+}

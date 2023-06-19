@@ -1,0 +1,175 @@
+@use "../../../global/global.scss" as global;
+
+.contact {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &_inner {
+    position: relative;
+    z-index: 5;
+    margin: auto;
+    max-width: 1240px;
+    max-height: 650px;
+    height: 100vh;
+    width: 100%;
+    background: rgba($color: #000000, $alpha: 0.9);
+    box-shadow: 0 0 5rem global.$neonColor;
+    border: 1px solid global.$normalColor;
+  }
+
+  &_ttl {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: 16px;
+    text-align: center;
+    font-size: global.$fontSizeLarge;
+    font-weight: bold;
+    line-height: 1.5;
+    text-shadow: 0 0 0.5rem global.$neonColor;
+    &::after {
+      content: "";
+      display: block;
+      height: 1px;
+      width: 50px;
+      border: 1px solid global.$normalColor;
+      box-shadow: 0 0 5rem global.$neonColor;
+    }
+  }
+  &_txt {
+    max-width: 750px;
+    width: calc(100% - 60px);
+    margin: 48px auto 0;
+    text-align: center;
+    font-size: global.$fontSizeNormal;
+    font-weight: normal;
+    line-height: 1.5;
+    letter-spacing: 0.05em;
+    text-shadow: 0 0 0.2rem global.$neonColor;
+  }
+  &_from {
+    height: 150px;
+    max-width: 750px;
+    width: calc(100% - 60px);
+    margin: 64px auto 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  &_frame {
+    width: calc(50% - 30px);
+    height: 100%;
+    &-address {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-content: space-between;
+      flex-wrap: wrap;
+    }
+    &-contact {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-content: space-between;
+      flex-wrap: wrap;
+    }
+  }
+  &_input {
+    width: 100%;
+    font-size: global.$fontSizeNormal;
+    font-weight: normal;
+    line-height: 1.5;
+    letter-spacing: 0.05em;
+    text-shadow: 0 0 0.5rem global.$neonColor;
+    &-txt {
+      line-height: 1.5;
+      width: 100%;
+      background-color: transparent;
+      border: none;
+      border-bottom: 1px solid global.$normalColor;
+      text-shadow: 0 0 0.5rem global.$neonColor;
+      appearance: none;
+      outline: none;
+    }
+    &-ttl {
+      width: 100%;
+      font-size: global.$fontSizeNormal;
+      font-weight: normal;
+      line-height: 1.5;
+      letter-spacing: 0.05em;
+      text-shadow: 0 0 0.5rem global.$neonColor;
+    }
+    &-txtArea {
+      line-height: 1.5;
+      width: 100%;
+      flex-grow: 2;
+      background-color: transparent;
+      border: 1px solid global.$normalColor;
+      text-shadow: 0 0 0.5rem global.$neonColor;
+      box-shadow: 0 0 0.5rem global.$neonColor;
+      appearance: none;
+      outline: none;
+    }
+    &-submit {
+      line-height: 1.5;
+      width: 300px;
+      height: 60px;
+      font-size: 3.2rem;
+      flex-grow: 2;
+      background-color: transparent;
+      border: 1px solid global.$normalColor;
+      text-shadow: 0 0 0.5rem global.$neonColor;
+      box-shadow: 0 0 0.5rem global.$neonColor;
+      appearance: none;
+      outline: none;
+    }
+  }
+  &_agree {
+    margin-top: 32px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .agree {
+      &_checkbox {
+        padding-bottom: 4px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 20px;
+        width: 20px;
+        border: 1px solid global.$normalColor;
+        box-shadow: 0 0 0.2rem global.$neonColor;
+      }
+      &_check {
+        transform: rotateY(150deg) rotate(-45deg);
+        font-size: global.$fontSizeNormal;
+        height: 0;
+        line-height: 0;
+        font-weight: normal;
+        text-shadow: 0 0 0.2rem global.$neonColor;
+      }
+      &_label {
+        margin-left: 16px;
+        font-size: global.$fontSizeNormal;
+        font-weight: normal;
+        line-height: 1.5;
+        letter-spacing: 0.05em;
+        text-shadow: 0 0 0.2rem global.$neonColor;
+      }
+    }
+  }
+
+  &_submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    margin: 40px auto 0;
+  }
+}
