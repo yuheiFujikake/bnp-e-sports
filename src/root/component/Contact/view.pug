@@ -1,0 +1,26 @@
+div.contact
+  div.contact_inner
+    h2.contact_ttl Contact
+    p.contact_txt BNP-eSportsへのお問い合わせ、ならびに所属メンバーへのお問い合わせは<br>以下のお問い合わせフォームよりお願いします。
+
+    div.contact_from
+      div.contact_frame.contact_frame-address
+
+        div.contact_input
+          p.contact_input-ttl ※お名前
+          input(type="text" name="name").contact_input-txt
+
+        div.contact_input.contact_input
+          p.contact_input-ttl ※メールアドレス
+          input(type="email" name="email").contact_input-txt
+
+      div.contact_frame.contact_frame-contact
+        p.contact_input-ttl ※お問合せ内容
+        textarea(name="contact").contact_input-txtArea
+
+    div.contact_agree.agree
+      div.agree_checkbox
+        p.agree_check L
+      p.agree_label 個人情報の取扱いについて同意します。
+    div.contact_submit
+      input(type="button" value="送信").contact_input-submit

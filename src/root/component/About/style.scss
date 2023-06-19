@@ -1,0 +1,52 @@
+@use "../../../global/global.scss" as global;
+
+.about {
+  &_wrapper {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  position: relative;
+  z-index: 5;
+  margin: auto;
+  max-width: 1240px;
+  max-height: 650px;
+  height: 100vh;
+  width: 100%;
+  background: rgba($color: #000000, $alpha: 0.9);
+  box-shadow: 0 0 5rem global.$neonColor;
+  border: 1px solid global.$normalColor;
+  &_ttl {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: 80px;
+    text-align: center;
+    font-size: global.$fontSizeLarge;
+    font-weight: bold;
+    line-height: 1.5;
+    text-shadow: 0 0 0.5rem global.$neonColor;
+    &::after {
+      content: "";
+      height: 1px;
+      width: 50px;
+      border: 1px solid global.$normalColor;
+    }
+  }
+  &_txt {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: global.$fontSizeNormal;
+    font-weight: normal;
+    line-height: 1.5;
+    letter-spacing: 0.05em;
+    text-shadow: 0 0 0.2rem global.$neonColor;
+  }
+}

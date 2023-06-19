@@ -6,11 +6,8 @@ const TerserPlugin = require("terser-webpack-plugin");
 // aliases used in sources of pug, scss, js
 const Resolve = {
   alias: {
-    Pages: path.join(__dirname, "src/pages/"),
-    Images: path.join(__dirname, "src/assets/images/"),
-    Fonts: path.join(__dirname, "src/assets/fonts/"),
-    Styles: path.join(__dirname, "src/assets/styles/"),
-    Scripts: path.join(__dirname, "src/assets/scripts/"),
+    "~": path.join(__dirname, "./src/"),
+    Images: path.join(__dirname, "./src/resource/"),
   },
 };
 
@@ -51,9 +48,9 @@ const RulesStyle = {
 };
 
 const RulesImages = {
-  test: /\.(png|svg|jpe?g|webp)$/i,
+  test: /\.(PNG|png|svg|jpe?g|webp)$/i,
   type: "asset/resource",
-  include: /assets[\\/]images/,
+  // include: /assets[\\/]images/,
   generator: {
     filename: "assets/img/[name].[hash:8][ext]",
   },
@@ -76,7 +73,7 @@ module.exports = {
   },
   devtool: "source-map",
   entry: {
-    index: "./src/pages/home/index.pug",
+    index: "./src/root/index.pug",
   },
   output: {
     path: path.resolve(__dirname, "docs"),
@@ -92,12 +89,8 @@ module.exports = {
   },
   plugins: [
     new PugPlugin({
-      js: {
-        filename: "assets/js/[name].[contenthash:8].js",
-      },
-      css: {
-        filename: "assets/css/[name].[contenthash:8].css",
-      },
+      js: { filename: "assets/js/[name].[contenthash:8].js" },
+      css: { filename: "assets/css/[name].[contenthash:8].css" },
     }),
   ],
 };

@@ -1,0 +1,13 @@
+@use "./component/MainVisual/style.scss" as mainVisual;
+@use "./component/About/style.scss" as about;
+@use "./component/Member/style.scss" as member;
+@use "./component/Topic/style.scss" as topic;
+@use "./component/Contact/style.scss" as contact;
+
+#myCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
