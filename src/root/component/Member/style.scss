@@ -1,19 +1,38 @@
 @use "../../../global/global.scss" as global;
+@use "../../../global/mixin" as m;
 
 .member {
   height: 100%;
+  margin: auto;
+  max-width: 1240px;
+  width: calc(100% - 120px);
   display: flex;
   justify-content: center;
   align-items: center;
+  @include m.mq(tab) {
+    margin-top: 120px;
+  }
+  @include m.mq(sp) {
+    margin-top: 64px;
+    width: calc(100% - 60px);
+  }
   &_slider {
-    height: 660px;
+    max-height: 660px;
+    height: 56vw;
+    @include m.mq(tab) {
+      max-height: 450px;
+      height: calc(100vw - 80px);
+    }
   }
   .slider {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: calc(100% - 120px);
-    max-width: 1200px;
+    width: 100%;
+    @include m.mq(tab) {
+      flex-wrap: wrap;
+      gap: 16px 0px;
+    }
     &_btn {
       display: flex;
       justify-content: center;
@@ -25,11 +44,33 @@
       box-shadow: 0 0 5rem global.$neonColor;
       border: 1px solid global.$normalColor;
       font-size: global.$fontSizeLarge;
+
+      @include m.mq(tab) {
+        width: calc(50% - 25px);
+        height: 50px;
+      }
+
+      &-prev {
+        @include m.mq(tab) {
+          order: 2;
+        }
+      }
+      &-next {
+        @include m.mq(tab) {
+          order: 3;
+        }
+      }
     }
 
     &_list {
       height: 100%;
       width: 100%;
+      @include m.mq(tab) {
+        order: 1;
+      }
+      @include m.mq(sp) {
+        height: auto;
+      }
     }
     &_itme {
       margin: auto;
@@ -37,11 +78,17 @@
       background: rgba($color: #000000, $alpha: 0.9);
       box-shadow: 0 0 5rem global.$neonColor;
       border: 1px solid global.$normalColor;
+      @include m.mq(sp) {
+        padding-bottom: 32px;
+      }
     }
     .item {
-      width: 100%;
+      width: calc(100% - 100px);
       height: 100%;
       max-width: 1024px;
+      @include m.mq(tab) {
+        width: 100%;
+      }
       &_ttl {
         margin-top: 64px;
         font-size: global.$fontSizeLarge;
@@ -49,13 +96,26 @@
         line-height: 1.5;
         text-shadow: 0 0 0.5rem global.$neonColor;
         text-align: center;
+        @include m.mq(tab) {
+          margin-top: 24px;
+        }
+        @include m.mq(sp) {
+          font-size: 3.2rem;
+        }
       }
       &_banner {
         margin: 64px auto 0;
         height: auto;
-        width: 100%;
+        width: calc(100% - 60px);
         max-width: 780px;
         min-width: 540px;
+        @include m.mq(tab) {
+          margin-top: 32px;
+        }
+        @include m.mq(sp) {
+          min-width: unset;
+          width: calc(100% - 30px);
+        }
       }
       &_attr {
         margin: 32px auto 0;
@@ -69,13 +129,26 @@
       width: 100%;
       max-width: 560px;
       min-width: 540px;
+      @include m.mq(sp) {
+        min-width: unset;
+        display: block;
+      }
       &_item {
         width: 50%;
+        @include m.mq(sp) {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+        }
         &-left {
           display: inline-block;
           width: 45%;
           text-align: right;
           text-shadow: 0 0 0.5rem global.$neonColor;
+          @include m.mq(sp) {
+            width: auto;
+          }
         }
         &-center {
           display: inline-block;
@@ -88,6 +161,9 @@
           width: 45%;
           text-align: left;
           text-shadow: 0 0 0.5rem global.$neonColor;
+          @include m.mq(sp) {
+            width: auto;
+          }
         }
       }
     }

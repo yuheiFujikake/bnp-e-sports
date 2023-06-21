@@ -1,21 +1,34 @@
 @use "../../../global/global.scss" as global;
+@use "../../../global/mixin" as m;
 
 .topic {
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  @include m.mq(tab) {
+    margin-top: 180px;
+  }
+  @include m.mq(sp) {
+    margin-top: 180px;
+  }
   &_inner {
     position: relative;
     z-index: 5;
     margin: auto;
     max-width: 1240px;
     max-height: 650px;
-    height: 100vh;
-    width: 100%;
+    height: 56vw;
+    width: calc(100% - 120px);
     background: rgba($color: #000000, $alpha: 0.9);
     box-shadow: 0 0 5rem global.$neonColor;
     border: 1px solid global.$normalColor;
+    @include m.mq(sp) {
+      padding-bottom: 48px;
+      width: calc(100% - 60px);
+      height: auto;
+      max-height: none;
+    }
   }
 
   &_ttl {
@@ -44,9 +57,21 @@
     justify-content: space-around;
     width: calc(100% - 120px);
     margin: 48px auto 0;
+    @include m.mq(tab) {
+      margin: 32px auto 0;
+    }
+    @include m.mq(sp) {
+      width: 100%;
+    }
   }
   &_item {
     width: calc(100% / 3);
+    @include m.mq(tab) {
+      width: calc(50% - 16px);
+    }
+    @include m.mq(sp) {
+      width: calc(100% - 60px);
+    }
   }
   &_img {
     width: 100%;
@@ -65,5 +90,8 @@
     line-height: 1.5;
     letter-spacing: 0.05em;
     text-shadow: 0 0 0.5rem global.$neonColor;
+    @include m.mq(tab) {
+      font-size: 1.5rem;
+    }
   }
 }

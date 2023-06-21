@@ -1,4 +1,5 @@
 @use "../../../global/global.scss" as global;
+@use "../../../global/mixin" as m;
 
 .about {
   &_wrapper {
@@ -6,24 +7,37 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    @include m.mq(tab) {
+      margin-top: 120px;
+    }
   }
   position: relative;
   z-index: 5;
   margin: auto;
   max-width: 1240px;
-  max-height: 650px;
-  height: 100vh;
-  width: 100%;
+  max-height: calc(100vh - 160px);
+  height: 550px;
+  width: calc(100% - 120px);
   background: rgba($color: #000000, $alpha: 0.9);
   box-shadow: 0 0 5rem global.$neonColor;
   border: 1px solid global.$normalColor;
+  @include m.mq(tab) {
+    height: calc(100vh - 160px);
+    max-height: 350px;
+  }
+  @include m.mq(sp) {
+    padding-bottom: 48px;
+    width: calc(100% - 60px);
+    height: auto;
+    max-height: none;
+  }
   &_ttl {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
-    margin-top: 80px;
+    margin-top: 16px;
     text-align: center;
     font-size: global.$fontSizeLarge;
     font-weight: bold;
@@ -48,5 +62,18 @@
     line-height: 1.5;
     letter-spacing: 0.05em;
     text-shadow: 0 0 0.2rem global.$neonColor;
+    @include m.mq(tab) {
+      width: calc(100% - 30px);
+      font-size: 1.5rem;
+      line-height: 2;
+    }
+    @include m.mq(sp) {
+      position: relative;
+      margin: 24px auto 0;
+      top: 0;
+      left: 0;
+      transform: none;
+      text-align: left;
+    }
   }
 }

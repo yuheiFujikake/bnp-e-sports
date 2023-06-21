@@ -1,4 +1,5 @@
 @use "../../../global/global.scss" as global;
+@use "../../../global/mixin" as m;
 
 .contact {
   height: 100%;
@@ -11,11 +12,20 @@
     margin: auto;
     max-width: 1240px;
     max-height: 650px;
-    height: 100vh;
-    width: 100%;
+    height: 60vw;
+    width: calc(100% - 120px);
     background: rgba($color: #000000, $alpha: 0.9);
     box-shadow: 0 0 5rem global.$neonColor;
     border: 1px solid global.$normalColor;
+    @include m.mq(tab) {
+      height: auto;
+      padding-bottom: 42px;
+    }
+    @include m.mq(sp) {
+      width: calc(100% - 60px);
+      max-height: none;
+      height: auto;
+    }
   }
 
   &_ttl {
@@ -49,6 +59,13 @@
     line-height: 1.5;
     letter-spacing: 0.05em;
     text-shadow: 0 0 0.2rem global.$neonColor;
+    @include m.mq(tab) {
+      font-size: 1.6rem;
+    }
+    @include m.mq(sp) {
+      text-align: left;
+      width: calc(100% - 30px);
+    }
   }
   &_from {
     height: 150px;
@@ -58,10 +75,26 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    @include m.mq(tab) {
+      margin-top: 32px;
+      gap: 0px 32px;
+      height: 200px;
+    }
+    @include m.mq(sp) {
+      display: block;
+      height: auto;
+      width: calc(100% - 30px);
+    }
   }
   &_frame {
     width: calc(50% - 30px);
     height: 100%;
+    @include m.mq(tab) {
+      width: calc(50% - 16px);
+    }
+    @include m.mq(sp) {
+      width: 100%;
+    }
     &-address {
       height: 100%;
       display: flex;
@@ -69,6 +102,20 @@
       justify-content: space-between;
       align-content: space-between;
       flex-wrap: wrap;
+      @include m.mq(tab) {
+        gap: 32px 0;
+        justify-content: flex-start;
+        align-content: flex-start;
+      }
+      @include m.mq(sp) {
+        display: block;
+        height: auto;
+      }
+    }
+    &-email {
+      @include m.mq(sp) {
+        margin-top: 16px;
+      }
     }
     &-contact {
       height: 100%;
@@ -77,6 +124,11 @@
       justify-content: space-between;
       align-content: space-between;
       flex-wrap: wrap;
+      @include m.mq(sp) {
+        margin-top: 16px;
+        display: block;
+        height: auto;
+      }
     }
   }
   &_input {
@@ -86,6 +138,9 @@
     line-height: 1.5;
     letter-spacing: 0.05em;
     text-shadow: 0 0 0.5rem global.$neonColor;
+    @include m.mq(tab) {
+      font-size: 1.6rem;
+    }
     &-txt {
       line-height: 1.5;
       width: 100%;
@@ -103,6 +158,9 @@
       line-height: 1.5;
       letter-spacing: 0.05em;
       text-shadow: 0 0 0.5rem global.$neonColor;
+      @include m.mq(tab) {
+        font-size: 1.6rem;
+      }
     }
     &-txtArea {
       line-height: 1.5;
@@ -114,6 +172,10 @@
       box-shadow: 0 0 0.5rem global.$neonColor;
       appearance: none;
       outline: none;
+      resize: none;
+      @include m.mq(sp) {
+        height: 200px;
+      }
     }
     &-submit {
       line-height: 1.5;
@@ -135,6 +197,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    @include m.mq(sp) {
+      width: calc(100% - 30px);
+      margin: 32px auto 0;
+    }
     .agree {
       &_checkbox {
         padding-bottom: 4px;
@@ -161,6 +227,13 @@
         line-height: 1.5;
         letter-spacing: 0.05em;
         text-shadow: 0 0 0.2rem global.$neonColor;
+        @include m.mq(tab) {
+          font-size: 1.6rem;
+        }
+        @include m.mq(sp) {
+          margin-left: 8px;
+          font-size: 1.5rem;
+        }
       }
     }
   }

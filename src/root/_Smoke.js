@@ -7,23 +7,58 @@ export default class SmokeWebGL {
     this.scene = scene;
     this.clock = clock;
     this.particles = [];
+    this.omenParticles = [];
   }
 
   init() {
     const geometry = new THREE.PlaneGeometry(30, 30);
     new THREE.TextureLoader().load(SMOKE_IMAGE, (texture) => {
-      const material = new THREE.MeshLambertMaterial({
+      const omen = new THREE.MeshLambertMaterial({
+        color: 0x6a5acd,
+        map: texture,
+        transparent: true,
+        depthTest: false,
+      });
+      for (let i = 1; i <= 3; i++) {
+        const particle = new THREE.Mesh(geometry, omen);
+        particle.position.x = i * -7 - 3;
+        particle.position.y = -10;
+        particle.position.z = -30;
+        particle.rotation.z = Math.random() * 360;
+        this.omenParticles.push(particle);
+        this.scene.add(particle);
+      }
+      const center = new THREE.MeshLambertMaterial({
         color: 0x565565,
         map: texture,
         transparent: true,
         depthTest: false,
       });
 
-      for (let i = 0; i < 7; i++) {
-        const particle = new THREE.Mesh(geometry, material);
-        particle.position.x = Math.random() * 30 - 15;
-        particle.position.y = Math.random() * 1 - 8;
-        particle.position.z = Math.random() * 6 - 10;
+      for (let i = 1; i <= 2; i++) {
+        const particle = new THREE.Mesh(geometry, center);
+        particle.position.x = 0;
+        particle.position.y = -10;
+        particle.position.z = -20;
+        particle.rotation.z = Math.random() * 360;
+        if (i % 2 == 0) {
+          this.omenParticles.push(particle);
+        } else {
+          this.particles.push(particle);
+        }
+        this.scene.add(particle);
+      }
+      const viper = new THREE.MeshLambertMaterial({
+        color: 0x00ff00,
+        map: texture,
+        transparent: true,
+        depthTest: false,
+      });
+      for (let i = 1; i <= 3; i++) {
+        const particle = new THREE.Mesh(geometry, viper);
+        particle.position.x = i * 7 + 3;
+        particle.position.y = -11;
+        particle.position.z = -30;
         particle.rotation.z = Math.random() * 360;
 
         this.particles.push(particle);
@@ -37,7 +72,11 @@ export default class SmokeWebGL {
     const delta = this.clock.getDelta();
     let num = this.particles?.length ?? 0;
     while (num--) {
-      this.particles[num].rotation.z += delta * 0.03;
+      this.particles[num].rotation.z += delta * 0.1;
+    }
+    let con = this.omenParticles?.length ?? 0;
+    while (con--) {
+      this.omenParticles[con].rotation.z -= delta * 0.1;
     }
   }
 }

@@ -52,7 +52,7 @@ const RulesImages = {
   type: "asset/resource",
   // include: /assets[\\/]images/,
   generator: {
-    filename: "assets/img/[name].[hash:8][ext]",
+    filename: "./assets/img/[name].[hash:8][ext]",
   },
 };
 
@@ -89,8 +89,8 @@ module.exports = {
   },
   plugins: [
     new PugPlugin({
-      js: { filename: "assets/js/[name].[contenthash:8].js" },
-      css: { filename: "assets/css/[name].[contenthash:8].css" },
+      js: { filename: "./assets/js/[name].[contenthash:8].js" },
+      css: { filename: "./assets/css/[name].[contenthash:8].css" },
     }),
   ],
 };
